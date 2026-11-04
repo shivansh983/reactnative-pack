@@ -1,24 +1,35 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
-
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
+export default function Index() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <SafeAreaView style= {{flex: 1 , backgroundColor:"#fff"}}>
+      <View style={{padding:16}}>
+        <Text>text</Text>
+
+        <TextInput placeholder="Search City.."
+        placeholderTextColor="#999"
+        style ={{
+          borderWidth:1,
+          borderColor:"#ddd",
+          borderRadius: 8,
+          padding: 10,
+          marginTop:12,
+        }}
+        />
+      <TouchableOpacity onPress={()=>alert("Warning")} style={{
+        backgroundColor: "#0c23d7",
+        padding: 12,
+        borderRadius: 8,
+        marginTop: 10,
+        alignItems:"center",
+      }}
+      >
+        <Text style={{color:"#9f9b9b"}}>
+          Search</Text>
+      </TouchableOpacity>
+
+      </View>
+    </SafeAreaView>
   );
 }
