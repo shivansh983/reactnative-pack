@@ -2,5 +2,7 @@
   "css.lint.unknownAtRules": "ignore",
   "files.associations": {
     "global.css": "tailwindcss"
-  }
+  },
+  "editor.colorDecorators": true,
+  "editor.defaultColorDecorators": "always"
 }
