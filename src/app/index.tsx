@@ -1,9 +1,13 @@
-import React from 'react'
-import { Redirect } from 'expo-router'
+import { Redirect } from "expo-router";
 
-export default function index() {
-  //if (true/signIn) 
-  return <Redirect href="/(root)/(tabs)" />
+// Auth state
+const isSignedIn = false;
 
-//  return (<Redirect href='/sign-in'/>)
+// Entry redirect
+export default function Index() {
+  if (isSignedIn) {
+    return <Redirect href="/(root)/(tabs)" />;
+  }
+
+  return <Redirect href="/sign-in" />;
 }

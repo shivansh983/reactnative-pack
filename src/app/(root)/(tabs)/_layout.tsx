@@ -3,6 +3,7 @@ import { Tabs } from "expo-router";
 import { Icon, Label, NativeTabs } from "expo-router/unstable-native-tabs";
 import { Platform } from "react-native";
 
+// Config
 const useNativeTabs = Platform.OS === "ios";
 
 const COLORS = {
@@ -12,7 +13,9 @@ const COLORS = {
   border: "#232838",
 };
 
+// Layout
 export default function TabLayout() {
+  // iOS: native tab bar
   if (useNativeTabs) {
     return (
       <NativeTabs
@@ -47,6 +50,7 @@ export default function TabLayout() {
     );
   }
 
+  // Android / web: JS tab bar
   return (
     <Tabs
       screenOptions={{

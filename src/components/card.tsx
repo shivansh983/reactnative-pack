@@ -11,11 +11,11 @@ type AppCardProps = {
   variant?: CardVariant;
 };
 
-// Styles per variant
+// Variant styles
 const variantStyles: Record<CardVariant, string> = {
-  elevated: "bg-white shadow-sm border border-gray-100",
-  outline: "bg-transparent border border-gray-200",
-  flat: "bg-gray-50 border-0",
+  elevated: "bg-brand-surface border border-brand-surface-border",
+  outline: "bg-transparent border border-brand-surface-border",
+  flat: "bg-brand-surface/50 border-0",
 };
 
 // Component

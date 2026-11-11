@@ -2,6 +2,7 @@ import React from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
+// Card data
 const CARDS = [
   { id: 1, title: 'Groceries', subtitle: 'Milk, eggs, bread' },
   { id: 2, title: 'Workout', subtitle: 'Leg day — 45 min' },
@@ -13,15 +14,18 @@ const CARDS = [
   { id: 8, title: 'Plan trip', subtitle: 'Shortlist three places' },
 ]
 
+// Screen
 export default function Index() {
   return (
-    // edges="bottom" because the Stack header already handles the top inset
     <SafeAreaView style={styles.screen} edges={['bottom']}>
       <ScrollView
         style={styles.scroll}
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
+        {
+          // Vertical list
+        }
         <Text style={styles.heading}>Vertical list</Text>
 
         {CARDS.map((card) => (
@@ -31,6 +35,9 @@ export default function Index() {
           </View>
         ))}
 
+        {
+          // Horizontal row
+        }
         <Text style={styles.heading}>Horizontal row</Text>
 
         <ScrollView
@@ -49,6 +56,7 @@ export default function Index() {
   )
 }
 
+// Styles
 const styles = StyleSheet.create({
   screen: {
     flex: 1,

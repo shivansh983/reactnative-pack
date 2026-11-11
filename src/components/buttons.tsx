@@ -11,7 +11,7 @@ type AppButtonProps = {
   className?: string;
 };
 
-// Styles per variant
+// Variant styles
 const containerStyles: Record<ButtonVariant, string> = {
   primary: "bg-brand-blue active:bg-brand-blue/80",
   danger: "bg-brand-coral active:bg-brand-coral/80",
